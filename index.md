@@ -21,3 +21,4 @@ I am a freshman, I play tennis and I love listening to music, which I listen to 
 ## <span style="color: oldlace;">*&#9733;Family&#9733;*</span>
 I have one brother who is a sophmore at Del Norte, 15 years old, a sister who is a junior at UCLA, 20 years old, and a mom and dad. 
 ![Alt Text](famiily.jpg)
+
