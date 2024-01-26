@@ -54,6 +54,7 @@ courses: { compsci: {week: 4} }
       <div class="calculator-equals">=</div>
       <!--row 5-->
       <div class="calculator-clear">A/C</div>
+      <div class="calculator-number" onclick="insertPi()">π</div>
   </div>
 </div>
 
@@ -177,6 +178,7 @@ Vanta animations just for fun, load JS onto the page
 <script src="{{site.baseurl}}/assets/js/vanta.birds.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/vanta.net.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/vanta.rings.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/vanta.fog.min.js"></script>
 
 <script>
 // setup vanta scripts as functions
@@ -184,11 +186,12 @@ var vantaInstances = {
   halo: VANTA.HALO,
   birds: VANTA.BIRDS,
   net: VANTA.NET,
-  rings: VANTA.RINGS
+  rings: VANTA.RINGS,
+  waves: VANTA.FOG,
 };
 
 // obtain a random vanta function
-var vantaInstance = vantaInstances[Object.keys(vantaInstances)[Math.floor(Math.random() * Object.keys(vantaInstances).length)]];
+var vantaInstance = VANTA.FOG;
 
 // run the animation
 vantaInstance({
@@ -198,3 +201,41 @@ vantaInstance({
   gyroControls: false
 });
 </script>
+<!-- JavaScript (JS) implementation of the calculator. -->
+<script>
+  // ... (existing code)
+
+  // π constant button listener
+  document.querySelector(".calculator-number[onclick='insertPi()']").addEventListener("click", function() {
+    insertPi();
+  });
+
+  // π constant action
+  function insertPi() {
+    output.innerHTML = Math.PI.toString();
+    nextReady = true;
+  }
+
+  // ... (existing code)
+</script>
+
+<style>
+  .calculator-output,
+  .calculator-number,
+  .calculator-operation,
+  .calculator-clear,
+  .calculator-equals {
+    color: white;
+  }
+
+  .calculator-output {
+    /* Your existing styles for the output container */
+    grid-column: span 4;
+    grid-row: span 1;
+    padding: 0.25em;
+    font-size: 20px;
+    border: 5px solid white;
+    display: flex;
+    align-items: center;
+  }
+</style>
